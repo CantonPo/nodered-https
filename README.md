@@ -1,3 +1,5 @@
+## Documentación Aplicación Iniciar Node-Red y recibir el Flows.json de forma segura sin acceso al codigo ni al flows.
+
 Tenemos el server.js que es el archivo que maneja la logica
 El package.json con todas las dependencias etc..
 Y algunos otros archivos como el package-lock.json etc...
