@@ -1,17 +1,22 @@
 ## Documentación Aplicación Iniciar Node-Red y recibir el Flows.json de forma segura sin acceso al codigo ni al flows.
 
-Tenemos el server.js que es el archivo que maneja la logica
+Tenemos el server.js que es el archivo que maneja la logica.
+
 El package.json con todas las dependencias etc..
+
 Y algunos otros archivos como el package-lock.json etc...
+
 Nos falta introducirle un flows.json (flujo de nodered) al proyecto, y la carpeta node_modules
 Una vez descargado el repo realizamos npm install para que nos cree la carpeta node_modules junto con todas las dependencias que tenemos indicadas en el package.json
 Y despues procedemos a empaquetar nuestro ejecutable con nexe:
 
         - npx nexe server.js --build --resource "flows.json" --resource "node_modules/**/" --resource ".json" --resource "*.js" -o aqui-va-el-nombre-del-ejecutable.exe 
 
+
 Listo, tenemos un ejecutable que nos iniciara la aplicacion, van incrustados el server.js y el flows.json, para añadir los demas archivos, carpeta node_modules, el lock.json etc...
 usaremos la herramienta INNO SETUP COMPILER, para meter en un instalador los demas archivos necesarios. Al abrir el instalador nos crea un nuevo ejecutable completamente funcional e independiente (el flows.json va introducido dentro por lo que no es visible) y los demas archivos nos lo instala en una carpeta que aparece en la carpeta archivos de programa, para que el ejecutable los lea (node_modules, lock.json etc...)
 Aquí dejo el script de inno setup para hacer esto: 
+
 
 [Setup]
 AppName=Capturador Intraza 
